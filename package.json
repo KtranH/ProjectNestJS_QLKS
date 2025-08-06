@@ -15,10 +15,19 @@
     "test:backend": "cd backend && npm run test",
     "test:frontend": "cd frontend && npm run test:unit"
   },
-  "keywords": ["hotel", "management", "nestjs", "vue3", "typescript"],
+  "keywords": [
+    "hotel",
+    "management",
+    "nestjs",
+    "vue3",
+    "typescript"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
   }
 }
