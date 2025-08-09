@@ -12,22 +12,24 @@
       <div class="w-full max-w-6xl flex items-center">
         <!-- Left Side - Text Overlay -->
         <div class="hidden lg:flex lg:w-1/2 lg:pr-12" data-aos="fade-right">
-          <div class="text-white">
-            <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">
-              Đăng nhập để
-              <span class="bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
-                khám phá
-              </span>
-              trải nghiệm tuyệt vời
-            </h1>
-            <p class="text-xl text-gray-700 mb-8 max-w-md">
-              Chào mừng bạn quay trở lại với KtStay. Đăng nhập để tiếp tục hành trình khám phá những điểm đến tuyệt vời.
-            </p>
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center shadow-lg">
-                <Hotel class="w-7 h-7 text-white" />
-              </div>
-              <span class="text-2xl font-bold text-gray-900">KtStay</span>
+          <div class="relative">
+            <!-- Dark overlay for better text readability -->
+            <div class="absolute inset-0 bg-black/20 rounded-3xl backdrop-blur-sm"></div>
+            <div class="relative p-8 rounded-3xl">
+              <h1 class="text-5xl font-bold mb-6 text-gray-900 drop-shadow-lg">
+                Đăng nhập để
+                <span class="bg-white bg-clip-text text-transparent">
+                  khám phá
+                </span>
+                trải nghiệm tuyệt vời
+              </h1>
+              <p class="text-xl text-gray-800 mb-8 max-w-md font-medium">
+                Chào mừng bạn quay trở lại với KtStay. Đăng nhập để tiếp tục hành trình khám phá những điểm đến tuyệt vời.
+              </p>
+              <router-link to="/home" class="flex items-center space-x-4">
+                <IconApp />
+                <span class="text-2xl font-bold text-gray-900">KtStay</span>
+              </router-link>
             </div>
           </div>
         </div>
@@ -37,24 +39,20 @@
           <div class="w-full max-w-md">
             <!-- Logo for mobile -->
             <div class="text-center mb-8 lg:hidden" data-aos="fade-down">
-              <div class="flex items-center justify-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center shadow-medium">
-                  <Hotel class="w-7 h-7 text-white" />
-                </div>
+              <router-link to="/home" class="flex items-center justify-center gap-3 mb-4">
+                <IconApp />
                 <span class="text-2xl font-bold text-gray-900">KtStay</span>
-              </div>
+              </router-link>
               <p class="text-gray-600">Đăng nhập để tiếp tục</p>
             </div>
 
             <!-- Login Form Card -->
             <div class="bg-white rounded-3xl shadow-strong p-8 border border-gray-100 backdrop-blur-sm" data-aos="fade-up">
               <div class="text-center mb-8">
-                <div class="flex items-center justify-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-black rounded-2xl flex items-center justify-center shadow-medium">
-                    <Hotel class="w-6 h-6 text-white" />
-                  </div>
+                <router-link to="/home" class="flex items-center justify-center gap-3 mb-4">
+                  <IconApp />
                   <span class="text-xl font-bold text-gray-900">KtStay</span>
-                </div>
+                </router-link>
                 <h1 class="text-2xl font-bold text-gray-900 mb-2">Chào mừng trở lại</h1>
                 <p class="text-gray-600">Đăng nhập vào tài khoản của bạn</p>
               </div>
@@ -157,9 +155,10 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
 import AOS from 'aos'
-import { Hotel, Mail, Lock, LogIn } from 'lucide-vue-next'
-import Button from '@/components/Button.vue'
-import Input from '@/components/Input.vue'
+import { Mail, Lock, LogIn } from 'lucide-vue-next'
+import IconApp from '@/components/icons/iconApp.vue'
+import Button from '@/components/base/Button.vue'
+import Input from '@/components/base/Input.vue'
 
 const router = useRouter()
 const { login, isLoading, error } = useAuth()

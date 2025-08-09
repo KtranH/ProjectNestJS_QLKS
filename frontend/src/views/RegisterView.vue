@@ -12,24 +12,39 @@
       <div class="w-full max-w-6xl flex items-center">
         <!-- Left Side - Text Overlay -->
         <div class="hidden lg:flex lg:w-1/2 lg:pr-12" data-aos="fade-right">
-          <div class="text-white">
-            <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">
-              Tham gia để
-              <span class="bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
-                khám phá
-              </span>
-              thế giới mới
-            </h1>
-            <p class="text-xl text-gray-700 mb-8 max-w-md">
-              Chào mừng bạn đến với KtStay. Tạo tài khoản để bắt đầu hành trình khám phá những điểm đến tuyệt vời và trải nghiệm dịch vụ 5 sao.
-            </p>
-            <div class="flex items-center space-x-4">
-              <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center shadow-lg">
-                <Hotel class="w-7 h-7 text-white" />
-              </div>
+          <div class="relative">
+            <!-- Dark overlay for better text readability -->
+            <div class="absolute inset-0 bg-black/20 rounded-3xl backdrop-blur-sm"></div>
+            <div class="relative p-8 rounded-3xl">
+              <h1 class="text-5xl font-bold mb-6 text-gray-900 drop-shadow-lg">
+                Tham gia để
+                <span class="bg-white bg-clip-text text-transparent">
+                  khám phá
+                </span>
+                thế giới mới
+              </h1>
+              <p class="text-xl text-gray-800 mb-8 max-w-md font-medium">
+                Chào mừng bạn đến với KtStay. Tạo tài khoản để bắt đầu hành trình khám phá những điểm đến tuyệt vời và trải nghiệm dịch vụ 5 sao.
+              </p>
+            <router-link to="/home" class="flex items-center space-x-4">
+              <IconApp />
               <span class="text-2xl font-bold text-gray-900">KtStay</span>
+            </router-link>
+             <!-- Benefits -->
+            <div class="mt-8 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20" data-aos="fade-up" data-aos-delay="900">
+              <h3 class="text-sm font-semibold text-gray-900 mb-3 flex items-center">
+                <CheckCircle class="w-4 h-4 mr-2 text-green-600" />
+                Lợi ích khi đăng ký
+              </h3>
+              <ul class="text-sm text-gray-800 space-y-2">
+                <li class="flex items-center"><Check class="w-4 h-4 mr-2 text-green-600" /> Đặt phòng nhanh chóng</li>
+                <li class="flex items-center"><Check class="w-4 h-4 mr-2 text-green-600" /> Ưu đãi đặc biệt</li>
+                <li class="flex items-center"><Check class="w-4 h-4 mr-2 text-green-600" /> Lịch sử đặt phòng</li>
+                <li class="flex items-center"><Check class="w-4 h-4 mr-2 text-green-600" /> Hỗ trợ 24/7</li>
+              </ul>
             </div>
           </div>
+        </div>
         </div>
 
         <!-- Right Side - Register Form -->
@@ -37,22 +52,18 @@
           <div class="w-full max-w-md">
             <!-- Logo for mobile -->
             <div class="text-center mb-8 lg:hidden" data-aos="fade-down">
-              <div class="flex items-center justify-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center shadow-medium">
-                  <Hotel class="w-7 h-7 text-white" />
-                </div>
+              <router-link to="/home" class="flex items-center justify-center gap-3 mb-4">
+                <IconApp />
                 <span class="text-2xl font-bold text-gray-900">KtStay</span>
-              </div>
+              </router-link>
               <p class="text-gray-600">Tạo tài khoản mới</p>
             </div>
 
             <!-- Register Form Card -->
-            <div class="bg-white rounded-3xl shadow-strong p-8 border border-gray-100 backdrop-blur-sm" data-aos="fade-up">
+            <div class="bg-white w-[550px] rounded-3xl shadow-strong p-8 border border-gray-100 backdrop-blur-sm" data-aos="fade-up">
               <div class="text-center mb-8">
                 <div class="flex items-center justify-center gap-3 mb-4">
-                  <div class="w-10 h-10 bg-black rounded-2xl flex items-center justify-center shadow-medium">
-                    <Hotel class="w-6 h-6 text-white" />
-                  </div>
+                  <IconApp />
                   <span class="text-xl font-bold text-gray-900">KtStay</span>
                 </div>
                 <h1 class="text-2xl font-bold text-gray-900 mb-2">Tham gia KtStay</h1>
@@ -167,20 +178,6 @@
                   </Button>
                 </div>
               </div>
-
-              <!-- Benefits -->
-              <div class="mt-8 p-4 bg-gray-50 rounded-2xl" data-aos="fade-up" data-aos-delay="900">
-                <h3 class="text-sm font-semibold text-gray-900 mb-3 flex items-center">
-                  <CheckCircle class="w-4 h-4 mr-2" />
-                  Lợi ích khi đăng ký
-                </h3>
-                <ul class="text-xs text-gray-700 space-y-1">
-                  <li class="flex items-center"><Check class="w-3 h-3 mr-2" /> Đặt phòng nhanh chóng</li>
-                  <li class="flex items-center"><Check class="w-3 h-3 mr-2" /> Ưu đãi đặc biệt</li>
-                  <li class="flex items-center"><Check class="w-3 h-3 mr-2" /> Lịch sử đặt phòng</li>
-                  <li class="flex items-center"><Check class="w-3 h-3 mr-2" /> Hỗ trợ 24/7</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -193,18 +190,18 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
-import AOS from 'aos'
 import { 
-  Hotel, 
   User, 
   Mail, 
   Lock, 
   UserPlus, 
   CheckCircle, 
-  Check 
+  Check  
 } from 'lucide-vue-next'
-import Button from '@/components/Button.vue'
-import Input from '@/components/Input.vue'
+import AOS from 'aos'
+import IconApp from '@/components/icons/iconApp.vue'
+import Button from '@/components/base/Button.vue'
+import Input from '@/components/base/Input.vue'
 
 const router = useRouter()
 const { register, isLoading, error } = useAuth()
