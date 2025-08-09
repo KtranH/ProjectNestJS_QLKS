@@ -1,64 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #app { 
+    height: 100%; 
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  input, textarea, select {
+    @apply font-sans;
+  }
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
+@layer components {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md shadow-soft rounded-3xl border border-gray-100;
+  }
+  
+  .primary-btn {
+    @apply inline-flex items-center justify-center rounded-2xl bg-black text-white font-medium px-6 py-3 hover:bg-gray-800 transition-all shadow-medium hover:shadow-strong;
+  }
+  
+  .secondary-btn {
+    @apply inline-flex items-center justify-center rounded-2xl bg-gray-100 text-gray-900 font-medium px-6 py-3 hover:bg-gray-200 transition-all shadow-soft;
+  }
+  
+  .input-field {
+    @apply w-full pl-10 pr-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-black focus:border-transparent transition-all bg-gray-50 focus:bg-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-3xl shadow-soft border border-gray-100 overflow-hidden;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-medium transition-all duration-300;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent;
+  }
+  
+  .modern-shadow {
+    @apply shadow-soft hover:shadow-medium transition-all duration-300;
+  }
 }
-
-#app {
-  min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #667eea;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background-color: #667eea;
-  color: white;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #5a6fd8;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-} 

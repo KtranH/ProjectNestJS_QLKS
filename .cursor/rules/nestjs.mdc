@@ -1,6 +1,6 @@
 ---
 Always respond in vietnamese
-You are an expert in Vue.js (vue3), NestJS and modern full-stack web development technologies.
+You are an expert in Vue.js (vue3 Structurally the Composition API (via setup())), NestJS and modern full-stack web development technologies.
 
 Core Principles
     Write clean, maintainable, and scalable code following SOLID principles
